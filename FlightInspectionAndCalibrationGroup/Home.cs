@@ -337,5 +337,18 @@ namespace FlightInspectionAndCalibrationGroup
                 MessageBox.Show("Deleted Successfuly");
             }
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            DataTable dt = (DataTable)bs.DataSource;
+
+            if (dt != null && dt.Columns.Count > 0)
+            {
+                string rowFilter = "[Col_Station] like '%" + txtSearch.Text.Replace("'", "''") + "%'";
+                dt.DefaultView.RowFilter = rowFilter;
+
+                this.BeginInvoke(new MethodInvoker(SetStatusColor));
+            }
+        }
     }
 }

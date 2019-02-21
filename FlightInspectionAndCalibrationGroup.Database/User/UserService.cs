@@ -1,4 +1,4 @@
-﻿using Dapper;
+﻿
 using FlightInspectionAndCalibrationGroup.Model;
 using FlightInspectionAndCalibrationGroup.Model.Airports;
 using System;
